@@ -3,7 +3,7 @@ variable "sg_name" {
   default = ["roboshop-bastion", "catalogue", "user",
     "cart", "shipping", "payment",
     "frontend", "mongodb", "reddis", "mysql",
-  "rabbitmq"]
+  "rabbitmq", "bastion"]
 }
 
 variable "project_name" {
