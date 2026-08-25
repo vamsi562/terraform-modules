@@ -1,6 +1,6 @@
 variable "sg_name" {
   type = list(string)
-  default = ["roboshop-bastion", "catalogue", "user",
+  default = ["catalogue", "user",
     "cart", "shipping", "payment",
     "frontend", "mongodb", "reddis", "mysql",
     "rabbitmq", "bastion", "frontend-alb",
