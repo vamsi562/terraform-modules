@@ -27,3 +27,33 @@ resource "aws_security_group_rule" "bastion_mongodb" {
   protocol                 = "tcp"
 
 }
+
+resource "aws_security_group_rule" "bastion_redis" {
+  type                     = "ingress"
+  security_group_id        = local.redis_sg
+  source_security_group_id = local.bastion_sg_id
+  from_port                = 22
+  to_port                  = 22
+  protocol                 = "tcp"
+
+}
+
+resource "aws_security_group_rule" "bastion_rabbitmq" {
+  type                     = "ingress"
+  security_group_id        = local.rabbitmq_sg
+  source_security_group_id = local.bastion_sg_id
+  from_port                = 22
+  to_port                  = 22
+  protocol                 = "tcp"
+
+}
+
+resource "aws_security_group_rule" "bastion_mysql" {
+  type                     = "ingress"
+  security_group_id        = local.mysql_sg
+  source_security_group_id = local.bastion_sg_id
+  from_port                = 22
+  to_port                  = 22
+  protocol                 = "tcp"
+
+}
