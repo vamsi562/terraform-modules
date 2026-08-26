@@ -2,7 +2,7 @@ variable "sg_name" {
   type = list(string)
   default = ["catalogue", "user",
     "cart", "shipping", "payment",
-    "frontend", "mongodb", "reddis", "mysql",
+    "frontend", "mongodb", "redis", "mysql",
     "rabbitmq", "bastion", "frontend-alb",
   "backend-alb"]
 }
