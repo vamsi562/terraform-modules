@@ -23,13 +23,13 @@ resource "terraform_data" "mongodb" {
     host     = aws_instance.mongodb.private_ip
   }
   provisioner "file" {
-    source      = "bastion.sh"
-    destination = "/tmp/bastion.sh"
+    source      = "bootstrap.sh"
+    destination = "/tmp/bootstrap.sh"
   }
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /tmp/bastion.sh",
-      "sudo sh /tmp/bastion.sh mongodb"
+      "chmod +x /tmp/bootstrap.sh",
+      "sudo sh /tmp/bootstrap.sh mongodb"
     ]
   }
 }
