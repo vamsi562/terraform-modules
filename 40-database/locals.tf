@@ -1,6 +1,9 @@
 locals {
-  ami_id        = data.aws_ami.joindevops_ami.id
-  mongodb_sg_id = data.aws_ssm_parameter.mongodb.value
+  ami_id         = data.aws_ami.joindevops_ami.id
+  mongodb_sg_id  = data.aws_ssm_parameter.mongodb.value
+  redis_sg_id    = data.aws_ssm_parameter.redis.value
+  rabbitmq_sg_id = data.aws_ssm_parameter.rabbitmq.value
+  mysql_sg_id    = data.aws_ssm_parameter.mysql.value
   common_tags = {
     Project     = var.project_name
     Environment = var.environment
