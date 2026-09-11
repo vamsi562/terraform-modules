@@ -1,7 +1,7 @@
-# variable "instance_type" {
-#   type    = string
-#   default = "t3.micro"
-# }
+variable "instance_type" {
+  type    = string
+  default = "t3.micro"
+}
 
 variable "project_name" {
   type    = string
@@ -13,7 +13,7 @@ variable "environment" {
   default = "dev"
 }
 
-variable "backend-alb_tags" {
+variable "ec2_tags" {
   type    = map(string)
   default = {}
 }

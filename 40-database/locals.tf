@@ -11,4 +11,5 @@ locals {
   }
   common_name_suffix = "${var.project_name}-${var.environment}"
   subnet_id          = split(",", data.aws_ssm_parameter.database_subnets.value)[0]
+  zone_id            = data.aws_route53_zone.chikoo.zone_id
 }

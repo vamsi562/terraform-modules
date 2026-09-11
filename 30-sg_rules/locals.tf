@@ -12,4 +12,5 @@ locals {
   redis_sg           = data.aws_ssm_parameter.redis_sg.value
   rabbitmq_sg        = data.aws_ssm_parameter.rabbitmq_sg.value
   mysql_sg           = data.aws_ssm_parameter.mysql_sg.value
+  catalogue_sg       = data.aws_ssm_parameter.catalogue_sg.value
 }

@@ -37,3 +37,9 @@ data "aws_ssm_parameter" "mysql" {
 data "aws_ssm_parameter" "rabbitmq" {
   name = "/${var.project_name}/${var.environment}/rabbitmq_sg_id"
 }
+
+
+data "aws_route53_zone" "chikoo" {
+  name         = "chikoo.fun"
+  private_zone = false # Set to true if looking up a private hosted zone
+}

@@ -10,4 +10,5 @@ locals {
   backend_alb_sg     = data.aws_ssm_parameter.backend_alb_sg.value
   subnet_id          = split(",", data.aws_ssm_parameter.private_subnets.value)
   vpc_id             = data.aws_ssm_parameter.vpc_id.value
+  zone_id            = data.aws_route53_zone.chikoo.zone_id
 }
