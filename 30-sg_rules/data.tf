@@ -6,6 +6,10 @@ data "aws_ssm_parameter" "backend_alb_sg" {
   name = "/${var.project_name}/${var.environment}/backend-alb_sg_id"
 }
 
+data "aws_ssm_parameter" "frontend_alb_sg" {
+  name = "/${var.project_name}/${var.environment}/frontend-alb_sg_id"
+}
+
 data "aws_ssm_parameter" "public_subnets" {
   name = "/${var.project_name}/${var.environment}/public_subnet_ids"
 }

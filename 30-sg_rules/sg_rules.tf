@@ -87,3 +87,13 @@ resource "aws_security_group_rule" "backend_alb_catalogue" {
   protocol                 = "tcp"
 
 }
+
+resource "aws_security_group_rule" "bastion_sg" {
+  type              = "ingress"
+  security_group_id = local.frontend_alb_sg
+  from_port         = 443
+  to_port           = 443
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+
+}
