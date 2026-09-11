@@ -113,6 +113,7 @@ resource "aws_launch_template" "catalogue" {
       Name = "${local.common_name_suffix}-catalogue"
     }
   )
+  depends_on = [aws_ami_from_instance.catalogue]
 }
 
 resource "aws_autoscaling_group" "catalogue" {
@@ -155,6 +156,7 @@ resource "aws_autoscaling_group" "catalogue" {
   timeouts {
     delete = "15m"
   }
+  depends_on = [aws_launch_template.catalogue]
 }
 
 resource "aws_autoscaling_policy" "example" {
@@ -167,6 +169,7 @@ resource "aws_autoscaling_policy" "example" {
     }
     target_value = 75.0
   }
+  depends_on = [aws_autoscaling_group.catalogue]
 }
 
 resource "aws_lb_listener_rule" "catalogue" {

@@ -1,6 +1,6 @@
 locals {
   ami_id          = data.aws_ami.joindevops_ami.id
-  catalogue_sg_id = data.aws_ssm_parameter.catalogue.value
+  catalogue_sg_id = data.aws_ssm_parameter.catalogue_sg.value
   common_tags = {
     Project     = var.project_name
     Environment = var.environment

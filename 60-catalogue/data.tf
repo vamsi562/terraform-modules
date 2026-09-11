@@ -29,3 +29,7 @@ data "aws_ssm_parameter" "vpc" {
 data "aws_ssm_parameter" "backend_lb_arn" {
   name = "/${var.project_name}/${var.environment}/backend_lb_listener_arn"
 }
+
+data "aws_ssm_parameter" "catalogue_sg" {
+  name = "/${var.project_name}/${var.environment}/catalogue_sg_id"
+}
